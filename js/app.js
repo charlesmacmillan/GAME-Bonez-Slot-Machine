@@ -51,7 +51,7 @@ const render = () => {
     message.innerHTML = "Bummer, you're out of bones!";
     reset.style.visibility = "visible";
   }
-  bones.textContent = `Bones:  ${currentBones}`;
+  bones.textContent = `${currentBones}`;
 };
 init();
 
