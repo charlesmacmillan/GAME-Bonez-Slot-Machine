@@ -47,16 +47,16 @@ const getWinner = () => {
 };
 const handleClick = (e) => {
   betAmount = parseInt(bet.value);
-  if (betAmount <= currentBones) {
+  if (isNaN(betAmount)) {
+    return message.textContent = "That is not a number, try again.";
+  } else if (betAmount <= currentBones) {
     currentBones -= betAmount;
     message.textContent = "Make another bet, and spin again!";
     spinner();
-  } else if (isNaN(betAmount)) {
-    message.textContent = "That is not a number, try again.";
   } else {
     message.textContent = "Not enough bones, try again.";
   }
-  bet.value = "";
+  bet.value = `${betAmount}`;
   win = getWinner();
   render();
 };
@@ -100,8 +100,7 @@ spin.addEventListener("click", handleClick);
 reset.addEventListener("click", init);
 bet.addEventListener("keyup", (e) => {
   if (e.keyCode === 13) {
-    e.preventDefault();
-    spin.click();
+    handleClick();
   }
 });
 stopper.addEventListener("click", function () {
