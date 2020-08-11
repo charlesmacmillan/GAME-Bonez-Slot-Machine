@@ -1,11 +1,27 @@
 // constant variables
 // win logic may be something like if spot + spot + spot = 3 ? winner = dog1
-const symbols = {
-  "2": "url()",
-  "3": "url()",
-  "4": "url()",
-  "5": "url()",
-};
+const symbols = [
+  {
+    value: "1",
+    style: '<img src="https://i.imgur.com/1nCvO3O.png" class="dogs"></img>',
+  },
+  {
+    value: "2",
+    style: '<img src="https://i.imgur.com/8rIYNYr.png" class="dogs"></img>',
+  },
+  {
+    value: "3",
+    style: '<img src="https://i.imgur.com/DVNYZG8.png" class="dogs"></img>',
+  },
+  {
+    value: "4",
+    style: '<img src="https://i.imgur.com/5mwPiY6.png" class="dogs"></img>',
+  },
+  {
+    value: "5",
+    style: '<img src="https://i.imgur.com/ZzBmHRX.png" class="dogs"></img>',
+  },
+];
 // state variables
 // bones keep keeps your currency
 // bet will be the input value
@@ -21,14 +37,20 @@ const columnEls = document.querySelectorAll(".column");
 const getWinner = () => {
   if (board[0] === board[1] && board[0] === board[2]) {
     return parseInt(board[0]);
+  } else if (
+    board[0] === board[1] ||
+    board[0] === board[2] ||
+    board[1] === board[2]
+  ) {
+    return 1;
   } else return 0;
 };
 const handleClick = (e) => {
   betAmount = parseInt(bet.value);
   if (betAmount <= currentBones) {
     currentBones -= betAmount;
-    message.textContent = "spinning...";
-    //call function for animation and remapping of board here.
+    message.textContent = "Make another bet, and spin again!";
+    spinner();
   } else if (isNaN(betAmount)) {
     message.textContent = "That is not a number, try again.";
   } else {
@@ -39,9 +61,11 @@ const handleClick = (e) => {
   render();
 };
 const spinner = () => {
-  columnEls.forEach(e => {
-    let idx = Math.floor(Math.random())
-  })
+  columnEls.forEach((e, i) => {
+    let idx = Math.floor(Math.random() * symbols.length);
+    columnEls[i].innerHTML = symbols[idx].style;
+    board[i] = parseInt(symbols[idx].value);
+  });
   //interval? recursion?
   //add event listener within a function?
 };
@@ -54,6 +78,7 @@ const init = () => {
   currentBones = 10;
   message.textContent = "Place your bet then hit Enter, or click SPIN!";
   reset.style.visibility = "hidden";
+  columnEls.innerHTML = "";
   render();
 };
 const render = () => {

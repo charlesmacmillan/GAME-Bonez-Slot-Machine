@@ -104,6 +104,14 @@ h1 {
   height: 65px;
   font-size: 25px;
 }
+.column {
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.dogs {
+  height: 33%;
+}
 
 @media only screen and (min-width: 1026px) {
   /* body {
