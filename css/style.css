@@ -55,12 +55,12 @@ h1 {
   height: 100%;
   background-color: white;
 }
-/* BONES VALUE, BET INPUT, AND SPIN BUTTON */
+/* BONES VALUE, BET INPUT, SPIN BUTTON, AND STOP BUTTON */
 #interface {
   margin-top: 5px;
   display: flex;
   align-items: center;
-  padding-right: 55px;
+  padding-right: 35px;
   justify-content: space-between;
 }
 /* BONES VALUE PANE */
@@ -82,15 +82,23 @@ h1 {
   padding: 10px 5px;
   font-size: 25px;
   text-align: center;
-  margin-right: 30px;
+  /* margin-right: 30px; */
   border: 2px solid rgb(49, 49, 49);
   border-radius: 5px;
   background-color: rgb(228, 228, 228)
 }
 /* SPIN BUTTON */
 #spin {
+  background-color: rgb(28, 226, 61);
+  border: 3px solid rgba(2, 36, 1, 0.521);
+}
+/* STOP BUTTON */
+#stop {
   background-color: red;
-  border: 3px dotted rgba(99, 8, 8, 0.521);
+  border: 3px solid rgba(99, 8, 8, 0.521);
+}
+#spin, 
+#stop {
   border-radius: 50%;
   width: 65px;
   height: 65px;
