@@ -48,13 +48,14 @@ const getWinner = () => {
 const handleClick = (e) => {
   betAmount = parseInt(bet.value);
   if (isNaN(betAmount)) {
-    return message.textContent = "That is not a number, try again.";
-  } else if (betAmount <= currentBones) {
+    return (message.textContent = "That is not a number, try again.");
+  } else if (currentBones === 0) return;
+  else if (betAmount <= currentBones) {
     currentBones -= betAmount;
     message.textContent = "Make another bet, and spin again!";
     spinner();
   } else {
-    message.textContent = "Not enough bones, try again.";
+    return (message.textContent = "Not enough bones, try again.");
   }
   bet.value = `${betAmount}`;
   win = getWinner();
