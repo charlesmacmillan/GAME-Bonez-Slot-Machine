@@ -3,36 +3,33 @@
 const symbols = [
   {
     value: "1",
-    style: '<img src="https://i.imgur.com/1nCvO3O.png" class="dogs"></img>',
+    style: '<img src="https://i.imgur.com/ASHUOoz.png" class="dogs"></img>',
   },
   {
     value: "2",
-    style: '<img src="https://i.imgur.com/8rIYNYr.png" class="dogs"></img>',
+    style: '<img src="https://i.imgur.com/PM7jLaD.png" class="dogs"></img>',
   },
   {
     value: "3",
-    style: '<img src="https://i.imgur.com/DVNYZG8.png" class="dogs"></img>',
+    style: '<img src="https://i.imgur.com/CUAhusj.png" class="dogs"></img>',
   },
   {
     value: "4",
-    style: '<img src="https://i.imgur.com/5mwPiY6.png" class="dogs"></img>',
+    style: '<img src="https://i.imgur.com/rUyNBLi.png" class="dogs"></img>',
   },
   {
     value: "5",
-    style: '<img src="https://i.imgur.com/ZzBmHRX.png" class="dogs"></img>',
+    style: '<img src="https://i.imgur.com/ZWbIHB5.png" class="dogs"></img>',
   },
 ];
 // state variables
-// bones keep keeps your currency
-// bet will be the input value
-// board will be the mapping of the 3 slot machine viewports.
 let stopActive = false;
 let currentBones, betAmount, board, win;
 // cached element references
-const spin = document.querySelector("#spin"); //spin button
-const reset = document.querySelector("#reset"); //reset button
-const bet = document.querySelector("#bet"); //bet input
-const stopper = document.querySelector("#stop"); //stop button
+const spin = document.querySelector("#spin");
+const reset = document.querySelector("#reset");
+const bet = document.querySelector("#bet");
+const stopper = document.querySelector("#stop");
 const columnEls = document.querySelectorAll(".column");
 //functions
 const getWinner = () => {
@@ -59,9 +56,6 @@ const handleClick = (e) => {
   } else {
     return (message.textContent = "Not enough bones, try again.");
   }
-  // bet.value = `${betAmount}`;
-  // win = getWinner();
-  // render();
 };
 
 const spinner = () => {
@@ -99,20 +93,18 @@ const render = () => {
 init();
 
 //event listeners
-//spin button
+
 spin.addEventListener("click", handleClick);
-//reset button (created when there's a loss)
 reset.addEventListener("click", init);
 bet.addEventListener("keyup", (e) => {
-  if (e.keyCode === 13) {
-    handleClick();
-  }
+  if (e.keyCode === 13) handleClick();
 });
+// bet.addEventListener("keyup", (e) => {
+//   if (e.keyCode === 65) reset.click();
+// });
 bet.addEventListener("keyup", (e) => {
-  if (e.keyCode === 32) {
-    stopper.click();
-  }
-})
+  if (e.keyCode === 32) stopper.click();
+});
 stopper.addEventListener("click", function () {
   stopActive = true;
 });
