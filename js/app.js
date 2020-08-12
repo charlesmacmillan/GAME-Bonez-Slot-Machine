@@ -26,6 +26,7 @@ const symbols = [
 // bones keep keeps your currency
 // bet will be the input value
 // board will be the mapping of the 3 slot machine viewports.
+let stopActive = false;
 let currentBones, betAmount, board, win;
 // cached element references
 const spin = document.querySelector("#spin"); //spin button
@@ -46,33 +47,35 @@ const getWinner = () => {
   } else return 0;
 };
 const handleClick = (e) => {
+  stopActive = false;
   betAmount = parseInt(bet.value);
   if (isNaN(betAmount)) {
     return (message.textContent = "That is not a number, try again.");
   } else if (currentBones === 0) return;
   else if (betAmount <= currentBones) {
     currentBones -= betAmount;
-    message.textContent = "Make another bet, and spin again!";
+    message.textContent = "Press spacebar or click 'STOP' to stop spin";
     spinner();
   } else {
     return (message.textContent = "Not enough bones, try again.");
   }
-  bet.value = `${betAmount}`;
-  win = getWinner();
-  render();
+  // bet.value = `${betAmount}`;
+  // win = getWinner();
+  // render();
 };
+
 const spinner = () => {
+  if (stopActive) {
+    bet.value = `${betAmount}`;
+    win = getWinner();
+    return render();
+  }
   columnEls.forEach((e, i) => {
     let idx = Math.floor(Math.random() * symbols.length);
     columnEls[i].innerHTML = symbols[idx].style;
     board[i] = parseInt(symbols[idx].value);
   });
-  //interval? recursion?
-  //add event listener within a function?
-};
-const handleOther = () => {
-  //if i add an event listener within the spin(animation & remapping) function,
-  //I probably won't need this function.
+  setTimeout(spinner, 100);
 };
 const init = () => {
   board = [0, 0, 0];
@@ -89,7 +92,8 @@ const render = () => {
   } else if (currentBones === 0) {
     message.innerHTML = "Bummer, you're out of bones!";
     reset.style.visibility = "visible";
-  }
+  } else if (currentBones < 10 && currentBones > 0)
+    message.textContent = `you lost ${betAmount} bones, try again!`;
   bones.textContent = `${currentBones}`;
 };
 init();
@@ -104,6 +108,11 @@ bet.addEventListener("keyup", (e) => {
     handleClick();
   }
 });
+bet.addEventListener("keyup", (e) => {
+  if (e.keyCode === 32) {
+    stopper.click();
+  }
+})
 stopper.addEventListener("click", function () {
-  console.log("clicked");
+  stopActive = true;
 });
