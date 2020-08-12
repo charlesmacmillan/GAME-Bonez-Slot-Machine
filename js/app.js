@@ -1,5 +1,5 @@
 // constant variables
-// win logic may be something like if spot + spot + spot = 3 ? winner = dog1
+
 const symbols = [
   {
     value: "1",
@@ -24,10 +24,12 @@ const symbols = [
 ];
 
 // state variables
+
 let stopActive = false;
 let currentBones, betAmount, board, win;
 
 // cached element references
+
 const spin = document.querySelector("#spin");
 const reset = document.querySelector("#reset");
 const bet = document.querySelector("#bet");
@@ -35,6 +37,7 @@ const stopper = document.querySelector("#stop");
 const columnEls = document.querySelectorAll(".column");
 
 //functions
+
 const getWinner = () => {
   if (board[0] === board[1] && board[0] === board[2]) {
     return parseInt(board[0]);
@@ -106,9 +109,6 @@ reset.addEventListener("click", init);
 bet.addEventListener("keyup", (e) => {
   if (e.keyCode === 13) handleClick();
 });
-// bet.addEventListener("keyup", (e) => {
-//   if (e.keyCode === 65) reset.click();
-// });
 bet.addEventListener("keyup", (e) => {
   if (e.keyCode === 32) stopper.click();
 });

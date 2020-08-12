@@ -6,7 +6,6 @@ body {
   display: grid;
   grid-template: 1fr 500px 1fr / 1fr 500px 1fr;
   margin: 0;
-  font: helvetica;
   background-color: #795241;
 }
 /* outside container */
