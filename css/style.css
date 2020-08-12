@@ -25,7 +25,11 @@ header {
 /* GAME TITLE */
 h1 {
   font-size: 100px;
-  margin: 0;
+  margin: 20px 0 0;
+  vertical-align: center;
+}
+h1 > img {
+  width: 75px;
 }
 /* GAME-PLAY RELATED MESSAGE */
 #message {
@@ -47,8 +51,7 @@ h1 {
   align-items: center;
   border: 8px solid rgba(0, 0, 0, 0.5);
   background-color: rgba(0, 0, 0, 0.8);
-  min-height: 300px;
-  height: 40vh;
+  height: 300px;
   grid-area: 2/1/2/4;
 }
 /* CONTAINED COLUMNS  */
@@ -119,12 +122,11 @@ h1 {
   height: 100%;
 }
 
-@media only screen and (min-width: 1026px) {
-  body {
 
-  }
-}
 @media only screen and (max-width: 500px) {
+  h1 > img {
+    width: 12%;
+  }
   main {
     width: 375px;
   }

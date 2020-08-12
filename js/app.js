@@ -79,7 +79,7 @@ const spinner = () => {
 const init = () => {
   board = [0, 0, 0];
   currentBones = 10;
-  message.textContent = "Place your bet then hit Enter, or click SPIN!";
+  message.textContent = "Place your bet then press Enter, or click SPIN!";
   reset.style.visibility = "hidden";
   columnEls.innerHTML = "";
   render();
