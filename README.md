@@ -3,7 +3,7 @@
 > A _pooch-themed_ **slot-machine** game <br />
 > I am a dog lover, and I wanted to incorporate that into a cute slot machine game.
 
-<img src="https://i.imgur.com/RKR6K7s.png">
+<img src="https://i.imgur.com/OF2xZEl.png">
 
 ### <ins>**Technologies Used:**</ins>
 
