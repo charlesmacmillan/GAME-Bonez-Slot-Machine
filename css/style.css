@@ -32,6 +32,7 @@ h1 > img {
 }
 /* GAME-PLAY RELATED MESSAGE */
 #message {
+  font-family: "Fredoka One", cursive;
   font-size: 30px;
   margin: 0;
   color: rgb(0, 0, 0);
