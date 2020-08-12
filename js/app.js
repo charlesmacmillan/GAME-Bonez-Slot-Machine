@@ -22,15 +22,18 @@ const symbols = [
     style: '<img src="https://i.imgur.com/ZWbIHB5.png" class="dogs"></img>',
   },
 ];
+
 // state variables
 let stopActive = false;
 let currentBones, betAmount, board, win;
+
 // cached element references
 const spin = document.querySelector("#spin");
 const reset = document.querySelector("#reset");
 const bet = document.querySelector("#bet");
 const stopper = document.querySelector("#stop");
 const columnEls = document.querySelectorAll(".column");
+
 //functions
 const getWinner = () => {
   if (board[0] === board[1] && board[0] === board[2]) {
@@ -43,6 +46,7 @@ const getWinner = () => {
     return 1;
   } else return 0;
 };
+
 const handleClick = (e) => {
   stopActive = false;
   betAmount = parseInt(bet.value);
@@ -71,6 +75,7 @@ const spinner = () => {
   });
   setTimeout(spinner, 100);
 };
+
 const init = () => {
   board = [0, 0, 0];
   currentBones = 10;
@@ -79,6 +84,7 @@ const init = () => {
   columnEls.innerHTML = "";
   render();
 };
+
 const render = () => {
   if (win) {
     currentBones += betAmount * win;
@@ -90,6 +96,7 @@ const render = () => {
     message.textContent = `you lost ${betAmount} bones, try again!`;
   bones.textContent = `${currentBones}`;
 };
+
 init();
 
 //event listeners
