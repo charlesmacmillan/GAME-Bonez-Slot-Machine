@@ -91,7 +91,13 @@ const init = () => {
 const render = () => {
   if (win) {
     currentBones += betAmount * win;
-    message.textContent = `nice, you won ${betAmount * win} bones!`;
+    message.textContent =
+      `nice, you won ${betAmount * win} bones!`;
+    if (betAmount > 19) {
+      doABarrelRoll();
+      message.textContent =
+        'WINNER! WINNER! CHICKEN DINNER!!';
+    }
   } else if (currentBones === 0) {
     message.innerHTML = "Bummer, you're out of bones!";
     reset.style.visibility = "visible";
@@ -119,8 +125,7 @@ stopper.addEventListener("click", function () {
 var doABarrelRoll = function () {
   var a = "-webkit-",
     b = "transform:rotate(1turn);",
-    c = "transition:4s;";
+    c = "transition:2s;";
   document.head.innerHTML += "<style>body{" + a + b + a + c + b + c;
 };
 
-doABarrelRoll();
