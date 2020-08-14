@@ -2,47 +2,59 @@
 
 const symbols = [
   {
-    value: "1",
-    style: '<img src="https://i.imgur.com/ASHUOoz.png" class="dogs"></img>',
-  },
-  {
-    value: "1",
-    style: '<img src="https://i.imgur.com/ASHUOoz.png" class="dogs"></img>',
-  },
-  {
-    value: "1",
-    style: '<img src="https://i.imgur.com/ASHUOoz.png" class="dogs"></img>',
-  },
-  {
-    value: "1",
+    value: "2",
     style: '<img src="https://i.imgur.com/ASHUOoz.png" class="dogs"></img>',
   },
   {
     value: "2",
-    style: '<img src="https://i.imgur.com/PM7jLaD.png" class="dogs"></img>',
+    style: '<img src="https://i.imgur.com/ASHUOoz.png" class="dogs"></img>',
   },
   {
     value: "2",
-    style: '<img src="https://i.imgur.com/PM7jLaD.png" class="dogs"></img>',
+    style: '<img src="https://i.imgur.com/ASHUOoz.png" class="dogs"></img>',
   },
   {
     value: "2",
+    style: '<img src="https://i.imgur.com/ASHUOoz.png" class="dogs"></img>',
+  },
+  {
+    value: "3",
     style: '<img src="https://i.imgur.com/PM7jLaD.png" class="dogs"></img>',
   },
   {
     value: "3",
-    style: '<img src="https://i.imgur.com/CUAhusj.png" class="dogs"></img>',
+    style: '<img src="https://i.imgur.com/PM7jLaD.png" class="dogs"></img>',
   },
   {
     value: "3",
+    style: '<img src="https://i.imgur.com/PM7jLaD.png" class="dogs"></img>',
+  },
+  {
+    value: "3",
+    style: '<img src="https://i.imgur.com/PM7jLaD.png" class="dogs"></img>',
+  },
+  {
+    value: "4",
     style: '<img src="https://i.imgur.com/CUAhusj.png" class="dogs"></img>',
   },
   {
     value: "4",
+    style: '<img src="https://i.imgur.com/CUAhusj.png" class="dogs"></img>',
+  },
+  {
+    value: "4",
+    style: '<img src="https://i.imgur.com/CUAhusj.png" class="dogs"></img>',
+  },
+  {
+    value: "5",
     style: '<img src="https://i.imgur.com/rUyNBLi.png" class="dogs"></img>',
   },
   {
     value: "5",
+    style: '<img src="https://i.imgur.com/rUyNBLi.png" class="dogs"></img>',
+  },
+  {
+    value: "6",
     style: '<img src="https://i.imgur.com/ZWbIHB5.png" class="dogs"></img>',
   },
 ];
