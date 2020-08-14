@@ -71,6 +71,7 @@ const spinner = () => {
     win = getWinner();
     return render();
   }
+  playReelSound();
   columnEls.forEach((e, i) => {
     let idx = Math.floor(Math.random() * symbols.length);
     columnEls[i].innerHTML = symbols[idx].style;
@@ -90,19 +91,16 @@ const init = () => {
 
 const render = () => {
   if (win) {
+    playBark1();
     currentBones += betAmount * win;
-    message.textContent =
-      `nice, you won ${betAmount * win} bones!`;
-    if (betAmount > 19) {
-      doABarrelRoll();
-      message.textContent =
-        'WINNER! WINNER! CHICKEN DINNER!!';
-    }
+    message.textContent = `nice, you won ${betAmount * win} bones!`;
   } else if (currentBones === 0) {
     message.innerHTML = "Bummer, you're out of bones!";
     reset.style.visibility = "visible";
-  } else if (currentBones < 10 && currentBones > 0)
+  } else if (currentBones < 10 && currentBones > 0) {
     message.textContent = `you lost ${betAmount} bones, try again!`;
+    playWhine();
+  }
   bones.textContent = `${currentBones}`;
 };
 
@@ -122,10 +120,18 @@ stopper.addEventListener("click", function () {
   stopActive = true;
 });
 
-var doABarrelRoll = function () {
-  var a = "-webkit-",
-    b = "transform:rotate(1turn);",
-    c = "transition:2s;";
-  document.head.innerHTML += "<style>body{" + a + b + a + c + b + c;
+const playReelSound = () => {
+  var audio = document.createElement("audio");
+  audio.src = "https://freesound.org/data/previews/348/348503_321967-lq.mp3";
+  audio.play();
 };
-
+const playBark1 = () => {
+  var audio = document.createElement("audio");
+  audio.src = "https://freesound.org/data/previews/420/420449_2402876-lq.mp3";
+  audio.play();
+};
+const playWhine = () => {
+  var audio = document.createElement("audio");
+  audio.src = "https://freesound.org/data/previews/427/427127_8343580-lq.mp3";
+  audio.play();
+};
