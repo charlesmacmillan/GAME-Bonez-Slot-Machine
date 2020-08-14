@@ -6,8 +6,32 @@ const symbols = [
     style: '<img src="https://i.imgur.com/ASHUOoz.png" class="dogs"></img>',
   },
   {
+    value: "1",
+    style: '<img src="https://i.imgur.com/ASHUOoz.png" class="dogs"></img>',
+  },
+  {
+    value: "1",
+    style: '<img src="https://i.imgur.com/ASHUOoz.png" class="dogs"></img>',
+  },
+  {
+    value: "1",
+    style: '<img src="https://i.imgur.com/ASHUOoz.png" class="dogs"></img>',
+  },
+  {
     value: "2",
     style: '<img src="https://i.imgur.com/PM7jLaD.png" class="dogs"></img>',
+  },
+  {
+    value: "2",
+    style: '<img src="https://i.imgur.com/PM7jLaD.png" class="dogs"></img>',
+  },
+  {
+    value: "2",
+    style: '<img src="https://i.imgur.com/PM7jLaD.png" class="dogs"></img>',
+  },
+  {
+    value: "3",
+    style: '<img src="https://i.imgur.com/CUAhusj.png" class="dogs"></img>',
   },
   {
     value: "3",
@@ -95,6 +119,7 @@ const render = () => {
     currentBones += betAmount * win;
     message.textContent = `nice, you won ${betAmount * win} bones!`;
   } else if (currentBones === 0) {
+    playHowl();
     message.innerHTML = "Bummer, you're out of bones!";
     reset.style.visibility = "visible";
   } else if (currentBones < 10 && currentBones > 0) {
@@ -133,5 +158,10 @@ const playBark1 = () => {
 const playWhine = () => {
   var audio = document.createElement("audio");
   audio.src = "https://freesound.org/data/previews/427/427127_8343580-lq.mp3";
+  audio.play();
+};
+const playHowl = () => {
+  var audio = document.createElement("audio");
+  audio.src = "https://freesound.org/data/previews/398/398430_3862281-lq.mp3";
   audio.play();
 };
