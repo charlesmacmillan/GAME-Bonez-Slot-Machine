@@ -28,5 +28,4 @@ https://charlesmacmillan.github.io/BONEZ-slot-machine/
 ### <ins>**Next Steps:**</ins>
 
 - I would like to clean up the spin animation, and make each reel stop independently of the others so you can try to time the slot and win more.
-- Some sound effects may be a cool touch
 - A more complex points system would be beneficial to the playability of this game.
