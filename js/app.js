@@ -158,22 +158,22 @@ stopper.addEventListener("click", function () {
 });
 
 const playReelSound = () => {
-  var audio = document.createElement("audio");
+  const audio = document.createElement("audio");
   audio.src = "https://freesound.org/data/previews/348/348503_321967-lq.mp3";
   audio.play();
 };
 const playBark1 = () => {
-  var audio = document.createElement("audio");
+  const audio = document.createElement("audio");
   audio.src = "https://freesound.org/data/previews/420/420449_2402876-lq.mp3";
   audio.play();
 };
 const playWhine = () => {
-  var audio = document.createElement("audio");
+  const audio = document.createElement("audio");
   audio.src = "https://freesound.org/data/previews/427/427127_8343580-lq.mp3";
   audio.play();
 };
 const playHowl = () => {
-  var audio = document.createElement("audio");
+  const audio = document.createElement("audio");
   audio.src = "https://freesound.org/data/previews/398/398430_3862281-lq.mp3";
   audio.play();
 };
